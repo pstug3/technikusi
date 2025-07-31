@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Saját Portfólió</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+<header>
+  <div class="theme-toggle-wrapper">
+    <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox" />
+    <label for="theme-toggle" class="theme-toggle-label">
+      <span class="toggle-ball"></span>
+    </label>
+  </div>
+
+  <div class="logo">Portfólióm</div>
+
+  <div class="header-right">
+    <nav class="nav">
+      <ul>
+        <li><a href="#">Kezdőlap</a></li>
+        <li><a href="#projects">Projektek</a></li>
+        <li><a href="#skills">Készségek</a></li>
+        <li><a href="#contact">Kapcsolat</a></li>
+        <li class="account-menu">
+          <button id="account-link" aria-haspopup="true" aria-expanded="false">Fiókom ▼</button>
+          <div id="account-dropdown" class="account-dropdown hidden" role="menu" aria-label="Fiók menü">
+            <div id="auth-panel">
+              <h3 id="auth-title">Bejelentkezés</h3>
+              <input type="text" id="auth-username" placeholder="Felhasználónév" />
+              <input type="email" id="auth-email" placeholder="Email" />
+              <button id="auth-btn">Bejelentkezés</button>
+              <p id="auth-toggle">
+                Nincs fiókod? <a href="#" id="toggle-link">Regisztrálj</a>
+              </p>
+            </div>
+
+            <div id="user-info" class="hidden">
+              <p>Bejelentkezve mint: <strong id="logged-user"></strong></p>
+              <button id="logout-btn">Kijelentkezés</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="hamburger" id="hamburger" aria-label="Menü megnyitása/bezárása" role="button" tabindex="0">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
+
+<!-- Többi szekció marad változatlan -->
+<section class="about">
+  <h2>Rólam</h2>
+  <p>Itt írhatod le, hogy mivel foglalkozol, mit tanultál, és mit keresel.</p>
+</section>
+
+<section class="projects" id="projects">
+  <h2>Projektek</h2>
+  <div class="project-grid">
+    <div class="project-card">
+      <img src="images/project1.jpg" alt="Projekt 1" />
+      <div class="project-info">
+        <h3>Projekt Neve</h3>
+        <p>Rövid leírás a projektről.</p>
+        <a href="#">GitHub</a> | <a href="#">Live Demo</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="images/project2.jpg" alt="Projekt 2" />
+      <div class="project-info">
+        <h3>Másik Projekt</h3>
+        <p>Ez is egy példa projekt leírása.</p>
+        <a href="#">GitHub</a> | <a href="#">Live Demo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="skills" id="skills">
+  <h2>Készségeim</h2>
+
+  <div class="skill">
+    <span>HTML</span>
+    <div class="skill-bar">
+      <div class="fill" data-percent="90%"></div>
+    </div>
+  </div>
+
+  <div class="skill">
+    <span>CSS</span>
+    <div class="skill-bar">
+      <div class="fill" data-percent="80%"></div>
+    </div>
+  </div>
+
+  <div class="skill">
+    <span>JavaScript</span>
+    <div class="skill-bar">
+      <div class="fill" data-percent="70%"></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Kapcsolat</h2>
+  <p>Email: <a href="mailto:te@email.com">te@email.com</a></p>
+  <p>GitHub: <a href="https://github.com/felhasznalo" target="_blank" rel="noopener noreferrer">github.com/felhasznalo</a></p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Kiss-Horkai László</p>
+</footer>
+
+<!-- Chat widget a jobb alsó sarokban -->
+<div id="chat-widget">
+  <button id="chat-toggle" aria-label="Chat megnyitása/bezárása">💬</button>
+
+  <div id="chat-container" class="hidden" role="region" aria-live="polite">
+    <div id="messages" class="messages"></div>
+    <div id="input-area">
+      <input type="text" id="userInput" placeholder="Írj egy üzenetet..." autocomplete="off" />
+      <button id="sendBtn" aria-label="Üzenet küldése">➤</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
