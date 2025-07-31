@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const navList = document.querySelector('nav ul');
   const fills = document.querySelectorAll('.fill');
 
-  // 🌗 Téma betöltése
+
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'dark') {
     body.classList.add('dark-mode');
@@ -18,16 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
   });
 
-  // 📅 Footer év
+  
   const year = new Date().getFullYear();
   footer.innerHTML = `&copy; ${year} Kiss-Horkai László`;
 
-  // 🍔 Hamburger menü
+ 
   hamburger.addEventListener('click', () => {
     navList.classList.toggle('active');
   });
 
-  // 🧠 Skill animáció scrollra
+
   window.addEventListener('scroll', () => {
     const skillsSection = document.querySelector('.skills');
     if (!skillsSection) return;
@@ -42,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // === Fiók menü működés ===
   const accountBtn = document.getElementById('account-link');
   const dropdown = document.getElementById('account-dropdown');
   const authPanel = document.getElementById('auth-panel');
@@ -92,7 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
     );
   });
 
-  // ⛔ Ne zárja be, ha a dropdownon belül kattintunk
   document.addEventListener('click', (e) => {
     if (!accountBtn.contains(e.target) && !dropdown.contains(e.target)) {
       dropdown.classList.add('hidden');
@@ -133,22 +131,18 @@ document.addEventListener('DOMContentLoaded', () => {
   updateToggleText();
   updateUI();
 
-  // === Chat működés ===
   const messagesEl = document.getElementById('messages');
   const userInput = document.getElementById('userInput');
   const sendBtn = document.getElementById('sendBtn');
   const chatToggle = document.getElementById('chat-toggle');
   const chatContainer = document.getElementById('chat-container');
 
-  // Új változók a tanulási folyamat kezeléséhez
   const chatMemory = [];
   let isLearning = false;
   let learningKey = '';
 
-  // Betöltjük a tanult válaszokat localStorage-ból
   let learnedResponses = JSON.parse(localStorage.getItem('learnedResponses')) || {};
 
-  // Egyszerű fuzzy keresés (részleges egyezés karakterek sorrendjével)
   function fuzzyIncludes(text, keyword) {
     let i = 0;
     for (const char of text) {
@@ -158,11 +152,11 @@ document.addEventListener('DOMContentLoaded', () => {
     return false;
   }
 
-  // Fejlettebb válaszadó függvény
+ 
   function botResponse(input) {
     const text = input.toLowerCase();
 
-    // Először nézzük, van-e tanult válasz
+    
     if (learnedResponses[text]) {
       return learnedResponses[text];
     }
@@ -199,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     ];
 
-    // Kontex alapú válasz példa
+    
     if (chatMemory.length > 0) {
       const lastUserMessage = chatMemory[chatMemory.length - 1].toLowerCase();
       if (lastUserMessage.includes('hogy vagy') && text.includes('jól')) {
@@ -214,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    return null; // Ha nem értjük, null-t adunk vissza, hogy tanuljon
+    return null; 
   }
 
   function addMessage(text, sender) {
@@ -229,7 +223,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const input = userInput.value.trim();
     if (!input) return;
 
-    // Ha tanulási módon vagyunk, akkor a bejövő üzenet a tanult válasz lesz
     if (isLearning) {
       learnedResponses[learningKey] = input;
       localStorage.setItem('learnedResponses', JSON.stringify(learnedResponses));

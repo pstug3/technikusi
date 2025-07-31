@@ -1,8 +1,8 @@
 :root {
   --bg: #f4f4f4;
   --text: #333;
-  --header-bg: #f0f0f0;   /* világos header háttér világos módban */
-  --header-text: #222;    /* sötétebb szöveg világos módban */
+  --header-bg: #f0f0f0;   
+  --header-text: #222;    
   --accent: #007acc;
   --card-bg: #ffffff;
   --card-shadow: rgba(0, 0, 0, 0.1);
@@ -43,7 +43,7 @@ footer {
 
 header {
   display: flex;
-  justify-content: center;  /* középre rendezi a gyerek elemeket */
+  justify-content: center;  
   align-items: center;
   position: relative;
   padding: 20px 40px;
@@ -51,7 +51,7 @@ header {
   color: var(--header-text);
 }
 
-/* Logó külön pozicionálása balra */
+
 .logo {
   position: absolute;
   left: 40px;
@@ -59,7 +59,6 @@ header {
   font-size: 1.5rem;
 }
 
-/* Nav középen marad */
 nav.nav ul {
   display: flex;
   gap: 30px;
@@ -94,7 +93,7 @@ nav ul li a:hover {
   transition: all 0.3s ease;
 }
 
-/* Mobil nézet */
+
 @media (max-width: 768px) {
   nav ul {
     display: none;
@@ -209,7 +208,6 @@ footer {
   color: var(--header-text);
 }
 
-/* Chat widget */
 
 #chat-widget {
   position: fixed;
@@ -362,10 +360,9 @@ body.dark-mode .message.bot {
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
-/* Ha be van kapcsolva */
 .theme-toggle-checkbox:checked + .theme-toggle-label .toggle-ball {
   transform: translateX(30px);
-  background: #ffd700; /* arany szín vagy bármi más */
+  background: #ffd700; 
 }
 
 .skill-bar .fill {
@@ -419,15 +416,14 @@ body.dark-mode .message.bot {
   display: none;
 }
 
-/* Fiók menü stílusok */
 
 .account-menu {
-  position: relative; /* a dropdown helyzetének alapja */
+  position: relative; 
 }
 
 .account-dropdown {
   position: absolute;
-  top: 100%; /* a gomb alatt jelenik meg */
+  top: 100%; 
   right: 0;
   background: var(--card-bg);
   color: var(--text);
@@ -436,7 +432,7 @@ body.dark-mode .message.bot {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   min-width: 250px;
   z-index: 1003;
-  display: none; /* alapból rejtve */
+  display: none; 
   transition: opacity 0.3s ease;
 }
 
@@ -446,7 +442,7 @@ body.dark-mode .message.bot {
 
 .auth-panel, 
 #user-info {
-  position: static; /* ne legyen külön pozícionálva */
+  position: static; 
   box-shadow: none;
   padding: 0;
   width: 100%;
@@ -457,7 +453,7 @@ body.dark-mode .message.bot {
 }
 
 .account-menu {
-  position: relative; /* FONTOS: a dropdown pozíciója miatt */
+  position: relative; 
 }
 
 .account-dropdown {
@@ -470,24 +466,23 @@ body.dark-mode .message.bot {
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   min-width: 250px;
-  max-height: 300px;       /* max magasság a görgetéshez */
-  overflow-y: auto;        /* görgetés engedélyezése */
+  max-height: 300px;       
+  overflow-y: auto;        
   z-index: 1003;
   
-  visibility: hidden;      /* alapból rejtett */
+  visibility: hidden;      
   opacity: 0;
   transition: opacity 0.3s ease, visibility 0.3s;
 }
 
-/* Amikor megjelenik */
 .account-dropdown.active,
 .account-dropdown:not(.hidden) {
   visibility: visible;
   opacity: 1;
-  display: block; /* vagy használj block helyett flexet ha kell */
+  display: block; 
 }
 
-/* Fiókom menüpont link stílusra hangolva */
+
 .account-menu button#account-link {
   background: none;
   border: none;
@@ -501,15 +496,13 @@ body.dark-mode .message.bot {
   text-decoration: none;
 }
 
-/* Hover hatás megegyezzen a többi menüponttal */
 .account-menu button#account-link:hover {
   color: var(--accent);
 }
 
-/* Dropdown pozíció */
 .account-dropdown {
   position: absolute;
-  top: 110%; /* a gomb alatt */
+  top: 110%; 
   right: 0;
   background: var(--card-bg);
   color: var(--text);
@@ -525,13 +518,11 @@ body.dark-mode .message.bot {
   z-index: 1003;
 }
 
-/* Dropdown megjelenítése */
 .account-dropdown.active {
   visibility: visible;
   opacity: 1;
 }
 
-/* Dropdown tartalom kinézete */
 #auth-panel, #user-info {
   padding: 0;
   margin: 0;
@@ -540,7 +531,6 @@ body.dark-mode .message.bot {
   width: 100%;
 }
 
-/* Link stílus a dropdownban, ha van */
 .account-dropdown a {
   color: var(--accent);
   text-decoration: underline;
